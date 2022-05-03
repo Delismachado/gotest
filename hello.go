@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-uageconst espanhol = "espanol"
+const espanhol = "espanol"
 const french = "french"
 const eng = "eng"
 const prefixPortOi = "Oi "
