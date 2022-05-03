@@ -14,14 +14,32 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("Say hi to people", func(t *testing.T) {
-		result := Hello("anyone!")
-		exp := "Hi anyone!"
+		result := Hello("anyone!", "")
+		exp := "Oi anyone!"
 		verifyMsg(t, result, exp)
 	})
 
 	t.Run("Say, Hi any, when has empty string", func(t *testing.T) {
-		result := Hello("")
-		exp := "Hi Any"
+		result := Hello("", "")
+		exp := "Oi Any"
+		verifyMsg(t, result, exp)
+	})
+
+	t.Run("En espanol", func(t *testing.T) {
+		result := Hello("Fiona", "espanol")
+		exp := "Hola, Fiona"
+		verifyMsg(t, result, exp)
+	})
+
+	t.Run("In french", func(t *testing.T) {
+		result := Hello("Fiona", "french")
+		exp := "Bonjour, Fiona"
+		verifyMsg(t, result, exp)
+	})
+
+	t.Run("In Eng", func(t *testing.T) {
+		result := Hello("Fiona", "eng")
+		exp := "Hi, Fiona"
 		verifyMsg(t, result, exp)
 	})
 

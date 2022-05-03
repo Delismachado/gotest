@@ -2,16 +2,33 @@ package main
 
 import "fmt"
 
-const prefixPortHi = "Hi "
+uageconst espanhol = "espanol"
+const french = "french"
+const eng = "eng"
+const prefixPortOi = "Oi "
+const prefixEspanhol = "Hola, "
+const prefixFrench = "Bonjour, "
+const prefixEng = "Hi, "
 
-func Hello(name string) string {
+func Hello(name, language string) string {
 	if name == "" {
 		name = "Any"
 	}
-	return prefixPortHi + name
 
+	prefix := prefixPortOi
+
+	switch language {
+	case french:
+		prefix = prefixFrench
+	case espanhol:
+		prefix = prefixEspanhol
+	case eng:
+		prefix = prefixEng
+	}
+
+	return prefix + name
 }
 
 func main() {
-	fmt.Println(Hello("anyone"))
+	fmt.Println(Hello("anyone", "same"))
 }
