@@ -10,3 +10,11 @@ func TestRepet(t *testing.T) {
 		t.Errorf("esperado '%s' mas obteve '%s'", exp, rep)
 	}
 }
+
+func BenchmarRepit(b *testing.B) {
+
+	for i := 0; i < b.N; i++ {
+		Repit("a")
+	}
+
+}
