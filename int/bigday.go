@@ -1,0 +1,6 @@
+package inteiros
+
+// recebe dois inteiros e retorna a soma deles
+func Add(x, y int) int {
+	return x + y
+}
